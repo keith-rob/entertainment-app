@@ -1,0 +1,29 @@
+.TextInput {
+  font-size: large;
+  border: 2px solid #1a1a1a;
+  padding: 5px;
+  border-radius: 3px;
+  display: block;
+  margin: 5px auto;
+}
+
+.TextInput:focus {
+  outline: none;
+  border: #ff7733;
+  box-shadow: 0 0 10px #1a1a1a;
+}
+
+.button {
+  background: #1a1a1a;
+  border: none;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #ff7733;
+  color: white;
+}
