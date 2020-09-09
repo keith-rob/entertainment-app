@@ -34,20 +34,23 @@ const Lookup = () => {
           "x-rapidapi-key": process.env.REACT_APP_API_KEY,
         },
       }
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        if (response.status_code !== 200) {
-          throw new Error();
-        }
-        setResponseObj(response);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(true);
-        setLoading(false);
-        console.log(err.message);
-      });
+    ).then((response) =>
+      response
+        .json()
+        .then((response) => {
+          if (response.status_code !== 200) {
+            throw new Error();
+          }
+
+          setResponseObj(response);
+          setLoading(false);
+        })
+        .catch((err) => {
+          setError(true);
+          setLoading(false);
+          console.log(err.message);
+        })
+    );
   }
 
   return (
@@ -118,6 +121,7 @@ const Lookup = () => {
           Search
         </button>
       </form>
+      <br></br>
       <Conditions responseObj={responseObj} error={error} loading={loading} />
     </div>
   );

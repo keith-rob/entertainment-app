@@ -7,9 +7,10 @@ const Conditions = (props) => {
       {props.error && (
         <small className={classes.Small}>Please enter a valid title</small>
       )}
-      {props.loading && <div className={classes.Loader} />};
+
+      {props.loading && <div className={classes.Loader} />}
       {props.responseObj.status_code === 200 ? (
-        <div>
+        <div className="card">
           <p>
             <br></br>
             <strong>{props.responseObj.results[0].name} </strong>
@@ -25,13 +26,6 @@ const Conditions = (props) => {
             Available here:<br></br>
             {props.responseObj.results[0].locations[0].display_name}
             <br></br>
-            <a
-              href="{props.responseObj.results[0].locations[0].url}"
-              rel="noopener noreffer"
-              target="_blank"
-            >
-              Check it out!
-            </a>
           </p>
         </div>
       ) : null}
